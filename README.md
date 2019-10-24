@@ -10,13 +10,13 @@ automatizar la transferencia de datos desde Excel a word.
 ## Abrir Excel.
 Una vez que abrimos un archivo nuevo, seleccionamos el excel para que corra en la macro.
 
-EXCEL GIF ABRIR.
+![](./gif/Abrir_excel.gif)
 
 ## WinActivate
 Antes de realizar alguna accion, es recomendable que la ventana del programa (Excel en este caso), no este minimizada.
 Una vez que busquemos el excel, presionar click derecho para seleccionarlo.
 
-WinActivate GIF
+![](./gif/WinActivate.gif)
 
 ## Conectar macro con  Excel.
 Para interactuar con el excel y sacar los datos,tenemos que conectarlo.
@@ -47,27 +47,28 @@ Pasos:
    7. Presionamos el boton 'Aplicar' y luego 'Aceptar'.
    Opcional: Si quieres ver el valor, puedes ir a Message Box, y escribes el nombre de la variable dentro de %nombre de Variable%
 
-    EXCEL EXTRAER GIF
+
+
+![](./gif/COM_INTERFACE.gif)
   
  ## Abrir Word
  Seleccionamos el Word de la misma manera que el excel.
+ ![](./gif/Abrir_Word.gif)
  
  ## Screenshot en el archivo del word.
  Usamos el screenshot en el texto que nos queremos posicionar, borramos el contenido y escribimos el valor del excel extraido          
  anteriormente. Para borrarlo usaremos un loop (para repetir la misma accion X cantidad de veces).
  En el gif, muestra un ejemplo de como seleccionar el texto que queremos modificar manteniendo click izquierdo.
+ ![](./gif/Sacar_Screens%20.gif)
  
-  GIF WORD
-  
  ## Insertar pulsaciones.
  Insertamos una accion del teclado, en este caso usamos el Supr. y la cantidad de veces que queres que sea presionado.
- 
- GIF TECLAOD
+ ![](./gif/delete_teclado.gif)
  
  ## Escribir el texto en el word.
  Escribiremos el texto, donde esta la variable guardada.
- gif escribit
- 
+ ![](./gif/texto_dato.gif)
+
  
  
  
