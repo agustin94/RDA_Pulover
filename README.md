@@ -10,7 +10,7 @@ automatizar la transferencia de datos desde Excel a word.
 ## Abrir Excel.
 Una vez que abrimos un archivo nuevo, seleccionamos el excel para que corra en la macro.
 
-![](./gif/Abrir_excel.gif)
+![](./gif/abrir_excel.gif)
 
 ## WinActivate
 Antes de realizar alguna accion, es recomendable que la ventana del programa (Excel en este caso), no este minimizada.
