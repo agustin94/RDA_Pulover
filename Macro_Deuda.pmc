@@ -1,0 +1,107 @@
+﻿[PMC Code v5.0.5]|F2||1|Window,2,Fast,0,1,Input,-1,-1,1|1|SaveWord
+Groups=Start:1
+01|[Gosub]|SetDataToWord|1|0|Gosub|||||
+2|[CommentBlock]|ARCHIVO|0|1|CommentBlock|||||
+3|WinActivate||1|333|WinActivate||Aviso de deuda.docx - Word|||
+4|Left Click, Break, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\archivo button.png|2|1000|ImageSearch|UntilFound|Window|||
+5|WinActivate||1|333|WinActivate||Aviso de deuda.docx - Word ahk_class OpusApp|||
+6|[Pause]||1|2594|Sleep|||||
+7|[LoopStart]|LoopStart|4|0|Loop|||||
+8|Down|{Down}|1|0|Send|||||
+9|[LoopEnd]|LoopEnd|1|0|Loop|||||
+10|Enter|{Enter}|1|0|Send|||||
+11|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\EXAMINAR BUTTON.png|1|1000|ImageSearch|UntilFound|Window|||
+12|[Pause]||1|1000|Sleep|||||
+13|[Assign Variable]|NombreDocNuevo := Carta documento_Cliente_%ArrayCliente%|1|0|Variable|||||
+14|[Text]|%NombreDocNuevo%|1|0|SendRaw|||||
+15|Enter|{Enter}|1|0|Send|||||
+16|[Pause]||1|2000|Sleep|||||
+17|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\archivo button -2 .png|2|999|ImageSearch|UntilFound|Window|||
+18|[LoopStart]|LoopStart|8|0|Loop|||||
+19|Down|{Down}|1|0|Send|||||
+20|[LoopEnd]|LoopEnd|1|0|Loop|||||
+21|Enter|{Enter}|1|0|Send|||||
+
+[PMC Code v5.0.5]|F4||1|Window,2,Fast,0,1,Input,-1,-1,1|1|SetDataToWord
+Groups=Start:1
+01|[Assign Variable]|NumFila := 1|1|0|Variable|||||
+02|Run|C:\Users\Agustin Moreno\Desktop\Proyectos The Eye\RDA-Pulover\Aviso de deuda.xlsx|1|0|Run|||||
+03|[Pause]||1|2000|Sleep|||||
+4|[Assign Variable]|NumFilaVerificacion := A%NumFila%|1|0|Variable|||||
+5|[Expression]|NClienteVerificacion := XL.Range(NumFilaVerificacion).Value|1|0|Expression||LoadWait|||
+6|Compare Variables|NClienteVerificacion == NroCliente|1|0|If_Statement|||||
+7|[Add Variable]|NumFila += 1|1|0|Variable|||||
+8|[Assign Variable]|String := A%NumFila% B%NumFila% C%NumFila% D%NumFila% E%NumFila%|1|0|Variable|||||
+09|[MsgBox]|%NumFila%|1|0|MsgBox|0||||
+10|[End If]|EndIf|1|0|If_Statement|||||
+011|[MsgBox]|%NumFila%|1|0|MsgBox|0||||
+12|[Assign Variable]|date := %A_DD%  %A_MMMM%  %A_YYYY%|1|0|Variable|||||
+13|[Assign Variable]|String := A%NumFila% B%NumFila% C%NumFila% D%NumFila% E%NumFila%|1|0|Variable|||||
+14|StrSplit|MyArray := String, ""|1|0|Function|||||
+15|[Assign Variable]|NroCliente := MyArray[1]|1|0|Variable|Expression||||
+16|[Assign Variable]|Nombre := MyArray[2]|1|0|Variable|Expression||||
+17|[Assign Variable]|Email := MyArray[3]|1|0|Variable|Expression||||
+18|[Assign Variable]|Monto := MyArray[4]|1|0|Variable|Expression||||
+19|[Assign Variable]|Vencimiento := MyArray[5]|1|0|Variable|Expression||||
+20|[Pause]||1|3000|Sleep|||||
+21|WinActivate||1|333|WinActivate||Aviso de deuda.xlsx - Excel|||
+22|Run|C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Aviso de deuda.docx|1|0|Run|||||
+23|WinActivate||1|333|WinActivate||Aviso de deuda.docx - Word ahk_class OpusApp|||
+24|[CommentBlock]|FECHA|0|1|CommentBlock||||0x000000|
+25|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\fecha.png|1|1000|ImageSearch|UntilFound|Window|||
+26|[LoopStart]|LoopStart|23|0|Loop|||||
+27|Delete|{Delete}|1|0|Send|||||
+28|[LoopEnd]|LoopEnd|1|0|Loop|||||
+29|[Text]|%A_DD% de %A_MMMM% del %A_YYYY%|1|1000|SendRaw|||||
+30|[CommentBlock]|NroCLIENTE|0|1|CommentBlock|||||
+31|[Expression]|NCliente := XL.Range(NroCliente).Value`n|1|0|Expression||LoadWait|||
+32|Left Click, Continue, FoundX, FoundY, 0|10, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\NroCliente.png|1|0|ImageSearch|UntilFound|Window|||
+33|[LoopStart]|LoopStart|16|0|Loop|e}||||
+34|Delete|{Delete}|1|0|Send|||||
+35|[LoopEnd]|LoopEnd|1|0|Loop|||||
+36|StrSplit|SplitNCliente := NCliente,"."|1|0|Function|||||
+37|[Assign Variable]|ArrayCliente := SplitNCliente[1]|1|0|Variable|Expression||||
+38|[Text]|%ArrayCliente%|1|0|SendRaw|||||
+39|[Pause]||1|2000|Sleep|||||
+40|[CommentBlock]|NOMBRE |0|1|CommentBlock|||||
+41|[Expression]|VNombre := XL.Range(Nombre).Value|1|0|Expression||LoadWait|||
+42|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\nombre.png|1|0|ImageSearch|UntilFound|Window|||
+43|[LoopStart]|LoopStart|9|0|Loop|||||
+44|Delete|{Delete}|1|0|Send|||||
+45|[LoopEnd]|LoopEnd|1|0|Loop|||||
+46|[Text]|%VNombre%|1|999|SendRaw|||||
+47|[Pause]||1|2000|Sleep|||||
+48|[CommentBlock]|VENCIMIENTO|0|1|CommentBlock|||||
+49|[Expression]|VVencimiento := XL.Range(Vencimiento).Value|1|0|Expression||LoadWait|||
+50|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\vencimiento.png|1|0|ImageSearch|UntilFound|Window|||
+51|[LoopStart]|LoopStart|22|0|Loop|||||
+52|Delete|{Delete}|1|0|Send|||||
+53|[LoopEnd]|LoopEnd|1|0|Loop|||||
+54|[Text]|%VVencimiento%|1|0|SendRaw|||||
+55|[Pause]||1|2000|Sleep|||||
+56|[CommentBlock]|MONTO|0|1|CommentBlock|||||
+57|[Expression]|XL.Range(Monto).Copy|1|1000|Expression||LoadWait|||
+58|Left Click, Continue, FoundX, FoundY, 0|0, 0, 1366, 768, C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Screenshot\monto.png|1|0|ImageSearch|UntilFound|Window|||
+59|[LoopStart]|LoopStart|8|0|Loop|||||
+60|Delete|{Delete}|1|0|Send|||||
+61|[LoopEnd]|LoopEnd|1|0|Loop|||||
+62|[Pause]||1|1000|Sleep|||||
+63|[Text]|%Clipboard%|1|0|SendRaw|||||
+64|Backspace|{Backspace}|1|0|Send|||||
+65|Backspace|{Backspace}|1|0|Send|||||
+
+[PMC Code v5.0.5]|F4||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Main_Macro_Deuda
+Groups=Iniciar:1
+1|Run|C:\Users\Agustin Moreno\Desktop\RDA-Pulover\Aviso de deuda.xlsx|1|0|Run|||||
+2|[Assign Variable]|NumFila := 1|1|0|Variable|||||
+3|[Pause]||1|2000|Sleep|||||
+4|[LoopStart]|LoopStart|1|0|Loop|||||
+5|[Gosub]|SetDataToWord|1|0|Gosub|||||
+6|[Add Variable]|NumFila += 1|1|0|Variable|||||
+7|[Gosub]|SaveWord|1|0|Gosub|||||
+8|[LoopEnd]|LoopEnd|1|0|Loop|||||
+
+[PMC Code v5.0.5]|F7||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Macro4
+Groups=Start:1
+1|agustin@theeye.io|asfasfasfas=0:asfasgfasgas|1|0|SendEmail|To=agustin.moreno94@gmail.com/CC=/BCC=||||
+
