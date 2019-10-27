@@ -38,9 +38,10 @@ Pasos:
      
      -**Range("Columna y NumeroDeFila")**: 
      
-     -**Value**: es el valor que contiene adentro de la celda.
+     -**Value**: Obtiene el valor que tiene adentro de la celda.
      
      -**Dato**: es el nombre de la variable, puedes ponerle el nombre que quieras y adentro contendra el valor de la celda.
+     Para llamar el valor de una variable lo usamos dentro de porcentaje %Dato%
      
      **Codigo de ejemplo**: 
      
@@ -51,7 +52,7 @@ Pasos:
      
      
      Para tomar el valor de varias celdas tenemos que usar **Copy**, Pulover guarda los valores copiados en **Clipboard**.
-     Luego se invoca con el signo porcentaje **%Clipboard%**.
+     Luego en otra accion se invoca con el signo porcentaje **%Clipboard%** (al igual que una variable):.
      
      ` XL.Range("A2:B4").Copy` 
          
@@ -65,7 +66,7 @@ Pasos:
 ![](./gif/COM_INTERFACE.gif)
   
  ## Abrir Word
- Seleccionamos el Word de la misma manera que el excel.
+ Seleccionamos el Word de la misma manera que seleccionamos el excel anteriormente.
  ![](./gif/Abrir_Word.gif)
  
  ## Screenshot en el archivo del word.
