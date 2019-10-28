@@ -1,4 +1,4 @@
-# Que es Pulover Macro Creator?
+# What is Pulover Macro Creator?
 Is a Free Automation Tool and Script Generator. It is based on AutoHotkey language and provides users with multiple automation functions, as well as a built-in recorder.
 Sites: https://www.macrocreator.com/
 
@@ -17,10 +17,10 @@ So that the window is active we always use WinActivate.
 
 ![](./gif/Win_Activate_Excel.gif)
 
-## Conectar macro con  Excel.
+## Connect macro with Excel.
 To interact with the excel and get the data, we have to relate it.
 
-Pasos:
+Steps:
   1. Let's go to Functions (Funciones).
   2. In Variable Output we write **XL**.
   3. In Function Name we select **ComObjActive**.
