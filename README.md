@@ -2,87 +2,91 @@
 Is a Free Automation Tool and Script Generator. It is based on AutoHotkey language and provides users with multiple automation functions, as well as a built-in recorder.
 Sites: https://www.macrocreator.com/
 
-## Objetivo
-automatizar la transferencia de datos desde Excel a word.
+## Objective
+Automate data transfer from Excel to word
 
 # Step by Step
 
-## Abrir Excel.
-Con el Boton Run, podemos ejecutar el excel seleccionado
+## Open Excel.
+With the Run Button, we can execute the selected Excel
 
-![](./gif/abrir_excel.gif)
+![](./gif/RUN_EXCEL.gif)
 
 ## WinActivate
-Para que la ventana este activa siempre usamos WinActivate.
+So that the window is active we always use WinActivate.
 
-![](./gif/WinActivate.gif)
+![](./gif/Win_Activate_Excel.gif)
 
 ## Conectar macro con  Excel.
-Para interactuar con el excel y sacar los datos, tenemos que Relacionarlo.
+To interact with the excel and get the data, we have to relate it.
 
 Pasos:
-  1. Vamos a Funciones.
-  2. En Salida Variable escribimos **XL**.
-  3. En Nombre de la funcion seleccionamos **ComObjActive**.
-  4. En Parametros escribimos (con comillas) **"Excel.Application** y presionamos aceptar.
-  5. Vamos al boton COM INTERFACE.
-  6. Click en check 'Creacion automatica de objetos COM'
-  7. En 'Manejar' escribimos **XL**.
-  8. En 'CLSID' Buscamos la opcion **"Excel.Application"**
-  9. Presionamos el boton de conectar. Pulover se minimiza, buscas el excel y cuando el cursor este sobre el excel donde extraeras los       datos presionas click derecho, al presionarlo deberia salir una ventana que diga **Conexion Correcta**. 
-    Si falla intentalo de nuevo y verifica que el excel sea el correcto o este dañado.
-  6. En 'Expresion/COM INTERFACE' ponemos el valor de la celda, y lo guardamos en una variable.
+  1. Let's go to Functions (Funciones).
+  2. In Variable Output we write **XL**.
+  3. In Function Name we select **ComObjActive**.
+  4. Parameters we write (with quotes)**"Excel.Application** and press accept.
+  5. Let's go to the button **COM INTERFACE**.
+  6. Click in check 'Automatically Create COM OBJECT'
+  7. In 'Handle' we wrote **XL**.
+  8. In 'CLSID' We look for the option **"Excel.Application"**
+  9. Press the connect button. Pulover is minimized, you look for the excel and when the cursor is on the excel where you will extract        the data you press right click, when pressing it you should leave a window that says **Connection Succesful!**. 
+     If it fails, try again and verify that the excel is correct or damaged.
+  10. In 'Expression/COM INTERFACE' we put the value of the cell, and save it in a variable.
      
-     En este ejemplo toma el valor de una sola celda. Lo guarda dentro de una variable llamada **Dato**.
+     In this example, it takes the value of a single cell. It saves it within a variable called **Dato**.
      
      
      ` Dato := XL.Range("B2").Value `
      
-     -**XL**: Es el nombre con el cual se relacion con el excel.
+     -**XL**: It is the name with which it relates to the excel.
      
      -**Range("Columna y NumeroDeFila")**: 
      
-     -**Value**: Obtiene el valor que tiene adentro de la celda.
+     -**Value**: Get the value it has inside the cell.
      
-     -**Dato**: es el nombre de la variable, puedes ponerle el nombre que quieras y adentro contendra el valor de la celda.
-     Para llamar el valor de una variable lo usamos dentro de porcentaje %Dato%
+     -**Dato**: It is the name of the variable, you can put the name you want and it will contain the value of the cell.
+      To call the value of a variable we use it as a percentage %Dato%
      
-     Para tomar el valor de varias celdas tenemos que usar **Copy**, Pulover guarda los valores copiados en **Clipboard**.
-     Luego en otra accion se invoca con el signo porcentaje **%Clipboard%** (al igual que una variable):.
+     To take the value of several cells we have to use **Copy**, Pulover saves the copied values in **Clipboard**.
+      Then another action is invoked with the percent sign **%Clipboard% ** (as well as a variable) :.
      
      ` XL.Range("A2:B4").Copy` 
          
    
-   7. Presionamos el boton 'Aplicar' y luego 'Aceptar'.
+   11. Press the 'Ok' button.
    
-   ##### Opcional: Si quieres ver el valor, puedes ir a Message Box, y escribes el nombre de la variable dentro de %nombre de Variable%
+   ##### Optional: If you want to see the value, you can go to Message Box, and write the name of the variable in %Variablename%
 
 
 
-![](./gif/COM_INTERFACE.gif)
+![](./gif/Conexion_excel_Cominterface.gif)
   
- ## Abrir Word
- Seleccionamos el Word de la misma manera que seleccionamos el excel anteriormente.
- ![](./gif/Abrir_Word.gif)
+ ## Open Word
+ We select the Word in the same way that we select the excel above.
+ ![](./gif/RUN_WORD.gif)
  
- ## Screenshot en el archivo del word.
- Podemos sacar screenshot para situarnos en el texto que necesitamos o en un boton que al encontrarlo pueda hacer Click.
+ ## Screenshot in the word file.
+ We can take screenshot to place ourselves in the text we need or in a button that when found it can click.
  
- ![](./gif/Sacar_Screens%20.gif)
- GIF ACCION BOTON
+ ![](./gif/SCREENSHOT_WORD.gif)
+ _______________________________________________________________
+ **Click to button with Screenshot**
+ ![](./gif/Screenshot_boton.gif)
  
- ## Insertar pulsaciones.
- Insertamos una accion del teclado, en este caso usamos el Supr. y la cantidad de veces que queres que sea presionado.
- ![](./gif/delete_teclado.gif)
+ ## Insert keyboard actions.
+ We insert a keyboard action, in this case we use the Delete and the number of times you want it to be pressed.
+ ![](./gif/pulse_keyboard.gif)
  
- ## Escribir el texto en el word.
- Escribiremos el texto o podemos usar una variable. De esta forma podemos reemplazarlo.
- **Escribiendo un texto**
- ![](./gif/texto_dato.gif)
+ ## Write the text in the word.
+ We will write the text or we can use a variable. This way we can replace it.
+ **Writing a text**
+ ![](./gif/write_text.gif)
+  _______________________________________________________________
+  
+ **Calling a variable that contains the data of a previously requested Excel cell**
  
+ ![](./gif/Write_Text_Variable.gif)
  
- **Llamando una variable que contiene el dato de una celda de excel anteriormente solicitada**
- gif variable texto.
  
  
 
