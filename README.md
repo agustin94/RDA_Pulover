@@ -1,74 +1,83 @@
 # What is Pulover Macro Creator?
-Is a Free Automation Tool and Script Generator. It is based on AutoHotkey language and provides users with multiple automation functions, as well as a built-in recorder.
-Sites: https://www.macrocreator.com/
+Es una herramienta de automatización y generador de scripts. Se basa en el lenguaje AutoHotkey y proporciona a los usuarios múltiples funciones de automatización, así como un grabador incorporado.
+Sitio: https://www.macrocreator.com/
 
 ## Objective
-Automate data transfer from Excel to word
+Completar la documentacion de word con los datos extraidos del excel, una vez completada la documentacion, enviarlo por mail al cliente correspondiente que figura en el excel.
 
 # Step by Step
 
+# Excel
+
 ## Open Excel.
-With the Run Button, we can execute the selected Excel
+Con el botón Run/Ejecutar, seleccionamos el excel desde **target** y en el command seleccionamos **run**
 
 ![](./gif/RUN_EXCEL.gif)
 
+
+## Connect macro with Excel.
+Para que nuestra macro pueda extraer los datos del excel, tenemos que relacionarlo siguiendo estos pasos.
+
+![](./gif/Conexion_excel_Cominterface.gif)
+
+Steps:
+  1. Vamos a Funciones(Functions).
+  2. En Variable Output escribiremos **XL**.
+  3. En Function Name seleccionamos **ComObjActive**.
+  4. En Parámetros escribimos (con comillas) **"Excel. Aplicación** y presionamos aceptar.
+  5. Vamos al boton **COM INTERFACE**.
+  6. Click en check 'Automatically Create COM OBJECT'
+  7. En 'Handle' escribimos **XL**.
+  8. En 'CLSID' buscamos la opcion **"Excel.Application"**
+  9. Ppresione el botón de conexión. Pulover está minimizado, tienes que buscar el excel que quieres usar, al encontrarlo presiona click 
+  derecho (Como podemos ver en el gif), al presionarlo debe salir de una ventana que dice **Connection Succesful!**. 
+  Si falla intenta conectarlo de nuevo o verifica que el excel no este dañado.
+  10. En 'Expression/COM INTERFACE' Ponemos el valor de la celda y lo guardamos en una variable.
+     
+  En este ejemplo, toma el valor de una sola celda. Lo guarda dentro de una variable llamada **Dato**.
+     
+     
+     ` Dato := XL.Range("B2").Value `
+     
+       
+  -**XL**: Es el nombre con el que se relaciona con el excel.
+  -**Range("Columna y NumeroDeFila")**:    
+  -**Value**: Obtenga el valor que tiene dentro de la celda.
+  -**Dato**: Es el nombre de la variable, puede poner el nombre que desee y contendrá el valor de la celda.
+  Para llamar el valor de una variable lo usamos como un porcentaje% Dato%
+     
+  Para tomar el valor de varias celdas tenemos que usar ** Copiar **, Pulover guarda los valores copiados en ** Portapapeles **.
+  Luego se invoca otra acción con el signo de porcentaje **% Portapapeles% ** (así como una variable):.
+     
+     ` XL.Range("A2:B4").Copy` 
+         
+   
+   11. Presione el botón 'Ok'.
+   
+   ##### Opcional: si desea ver el valor, puede ir a **Message Box** y escribir el nombre de la variable de este modo %Nombre de variable%
+
+  
 ## WinActivate
 So that the window is active we always use WinActivate.
 
 ![](./gif/Win_Activate_Excel.gif)
 
-## Connect macro with Excel.
-To interact with the excel and get the data, we have to relate it.
+# WORD
 
-Steps:
-  1. Let's go to Functions (Funciones).
-  2. In Variable Output we write **XL**.
-  3. In Function Name we select **ComObjActive**.
-  4. Parameters we write (with quotes)**"Excel.Application** and press accept.
-  5. Let's go to the button **COM INTERFACE**.
-  6. Click in check 'Automatically Create COM OBJECT'
-  7. In 'Handle' we wrote **XL**.
-  8. In 'CLSID' We look for the option **"Excel.Application"**
-  9. Press the connect button. Pulover is minimized, you look for the excel and when the cursor is on the excel where you will extract        the data you press right click, when pressing it you should leave a window that says **Connection Succesful!**. 
-     If it fails, try again and verify that the excel is correct or damaged.
-  10. In 'Expression/COM INTERFACE' we put the value of the cell, and save it in a variable.
-     
-     In this example, it takes the value of a single cell. It saves it within a variable called **Dato**.
-     
-     
-     ` Dato := XL.Range("B2").Value `
-     
-     -**XL**: It is the name with which it relates to the excel.
-     
-     -**Range("Columna y NumeroDeFila")**: 
-     
-     -**Value**: Get the value it has inside the cell.
-     
-     -**Dato**: It is the name of the variable, you can put the name you want and it will contain the value of the cell.
-      To call the value of a variable we use it as a percentage %Dato%
-     
-     To take the value of several cells we have to use **Copy**, Pulover saves the copied values in **Clipboard**.
-      Then another action is invoked with the percent sign **%Clipboard% ** (as well as a variable) :.
-     
-     ` XL.Range("A2:B4").Copy` 
-         
-   
-   11. Press the 'Ok' button.
-   
-   ##### Optional: If you want to see the value, you can go to Message Box, and write the name of the variable in %Variablename%
-
-
-
-![](./gif/Conexion_excel_Cominterface.gif)
-  
  ## Open Word
  We select the Word in the same way that we select the excel above.
  ![](./gif/RUN_WORD.gif)
  
- ## Screenshot in the word file.
- We can take screenshot to place ourselves in the text we need or in a button that when found it can click.
+ ## Reemplazar 
+ Microsoft Word tiene una opcion para reemplazar palabras, que podemos llamarlo con la combinacion de tecla *CTRL+L*
+ COLOCAR IMAGEN DE MUESTRA
  
- ![](./gif/SCREENSHOT_WORD.gif)
+ Pulover tiene una opcion para que puedas usar una combinacion de teclado como vimos anteriormente. 
+ Pulsamos las teclas que queremos usar en nuestra macro.
+ GIF TECLA
+
+ 
+ 
  _______________________________________________________________
  **Click to button with Screenshot**
  ![](./gif/Screenshot_boton.gif)
