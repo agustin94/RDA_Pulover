@@ -55,7 +55,11 @@ Steps:
    11. Presione el botón 'Ok'.
    
    ##### Opcional: si desea ver el valor, puede ir a **Message Box** y escribir el nombre de la variable de este modo %Nombre de variable%
-   
+
+## Escribir datos en excel.
+Si queremos escribir un valor en una celda, primero escribimos la celda y al final el valor que deseamos.
+
+`XL.Range("B2").Value := "Documento enviado"` 
    
 
 ## Pausa
@@ -63,7 +67,7 @@ Usamos pausa en caso de que la aplicacion tenga alguna demora en alguna accion, 
 ningun proceso que necesitemos y falle. Nos servira para que el proceso que automatizamos vaya a una velocidad sincronizada
 con la aplicacion que estamos manipulando.
 
-Gif pausa
+![](./gif/pausa.gif)
  
 
   
@@ -80,11 +84,14 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
  
  ## Llamar funcion de word con Atajo de tecla.
  Microsoft Word tiene una opcion para reemplazar palabras, que podemos llamarlo con una **atajo del teclado** escribiendo *CTRL+L*.
- COLOCAR IMAGEN DE MUESTRA
+
+ ![](./gif/buscar_reemplazar.png)
  
  Pulover tiene una opcion para que puedas usar una combinacion de teclado como vimos anteriormente. 
  Pulsamos las teclas que queremos usar en nuestra macro.
- GIF TECLA
+ 
+ ![](./gif/atajo_tecla.gif)
+ 
  
  Los atajos de tecla nos servira para agilizar nuestra automatizacion y funcione con menos demora.
  Si queres ver mas de estos atajos visita este sitio: https://www.computerhope.com/shortcut/word.htm
@@ -93,8 +100,8 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
  
  _______________________________________________________________
  **Click a boton con screenshot**
- REEMPLAZARLO
- ![](./gif/Screenshot_boton.gif)
+
+ ![](./gif/SCREEN_BUTTON.gif)
  
  ## Insertar acciones de teclado.
  Insertamos un atajo de teclado, en este caso usamos Eliminar y la cantidad de veces que desea que se presione.
@@ -134,8 +141,14 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
  8. Usaremos enter.
  9. Cuando el word esta completo, lo guardamos sin reemplazar el archivo original. 
  10. Con F12 ingresamos a la ventana *Guardar Como...*
- 11. Podemos escribir el nombre del archivo y ruta, como veremos en este gif.
- 
+ 11. Usamos TEXT para escribir la ruta para guardarlo y el nombre del archivo
+
+## Enviar Email desde Outlook.
+
+Para poder enviar un email desde outlook teniendo una cuenta de Gmail, anteriormente tenemos que configurarlo para que podamos enviar y recibir emails.
+Tutorial: https://oit.colorado.edu/tutorial/gmail-configure-outlook-windows.
+
+Una vez que este configurado podemos iniciar el outlook. Lo iniciamos del mismo modo que los archivos 
  
  
  
