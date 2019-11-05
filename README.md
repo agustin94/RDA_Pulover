@@ -3,7 +3,7 @@ Es una herramienta de automatización y generador de scripts. Se basa en el leng
 Sitio: https://www.macrocreator.com/
 
 ## Objetivo
-Completar la documentacion de word con los datos extraidos del excel, una vez completada la documentacion, enviarlo por mail al cliente correspondiente que figura en el excel.
+Completar la documentación de Word con los datos extraídos del Excel, una vez completada la documentación, enviarlo por mail al cliente correspondiente que figura en el Excel.
 
 # Paso a paso
 
@@ -16,7 +16,7 @@ Con el botón Run/Ejecutar, seleccionamos el excel desde **target** y en el comm
 
 
 ## Connect macro with Excel.
-Para que nuestra macro pueda extraer los datos del excel, tenemos que relacionarlo siguiendo estos pasos.
+Para que nuestra macro pueda extraer los datos del Excel, tenemos que relacionarlo siguiendo estos pasos.
 
 ![](./gif/Conexion_excel_Cominterface.gif)
 
@@ -42,19 +42,19 @@ Steps:
        
   -**XL**: Es el nombre con el que se relaciona con el excel.
   -**Range("Columna y NumeroDeFila")**:    
-  -**Value**: Obtenga el valor que tiene dentro de la celda.
+  -**Value**: Obtiene el valor que tiene dentro de la celda.
   -**Dato**: Es el nombre de la variable, puede poner el nombre que desee y contendrá el valor de la celda.
-  Para llamar el valor de una variable lo usamos como un porcentaje% Dato%
+  Para llamar el valor de una variable lo usamos como un porcentaje %Dato%
      
-  Para tomar el valor de varias celdas tenemos que usar ** Copiar **, Pulover guarda los valores copiados en ** Portapapeles **.
-  Luego se invoca otra acción con el signo de porcentaje **% Portapapeles% ** (así como una variable):.
+  Para tomar el valor de varias celdas tenemos que usar **Copiar**, Pulover guarda los valores copiados en **Portapapeles**.
+  Luego se invoca otra acción con el signo de porcentaje **%Portapapeles% ** (así como una variable):.
      
      ` XL.Range("A2:B4").Copy` 
          
    
    11. Presione el botón 'Ok'.
    
-   ##### Opcional: si desea ver el valor, puede ir a **Message Box** y escribir el nombre de la variable de este modo %Nombre de variable%
+   ##### Opcional: si desea ver el valor, puede ir a **Message Box** y escribir el nombre de la variable de este modo %Nombre de   variable%
 
 ## Escribir datos en excel.
 Si queremos escribir un valor en una celda, primero escribimos la celda y al final el valor que deseamos.
@@ -63,9 +63,9 @@ Si queremos escribir un valor en una celda, primero escribimos la celda y al fin
    
 
 ## Pausa
-Usamos pausa en caso de que la aplicacion tenga alguna demora en alguna accion, nos servira para que el codigo no saltee 
-ningun proceso que necesitemos y falle. Nos servira para que el proceso que automatizamos vaya a una velocidad sincronizada
-con la aplicacion que estamos manipulando.
+Usamos pausa en caso de que la aplicación tenga alguna demora en alguna acción, nos servira para que el código no saltee 
+Ningun proceso que necesitemos y falle. Nos servira para que el proceso que automatizamos vaya a una velocidad sincronizada
+con la aplicación que estamos manipulando.
 
 ![](./gif/pausa.gif)
  
@@ -79,7 +79,7 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
 # WORD
 
  ## Abrir Word
- Abrimos el word del mismo modo que el excel (es valido para cualquier aplicacion)
+ Abrimos el word del mismo modo que el excel (es valido para cualquier aplicación)
  ![](./gif/RUN_WORD.gif)
  
  ## Llamar funcion de word con Atajo de tecla.
@@ -87,13 +87,13 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
 
  ![](./gif/buscar_reemplazar.png)
  
- Pulover tiene una opcion para que puedas usar una combinacion de teclado como vimos anteriormente. 
+ Pulover tiene una opción para que puedas usar una combinación de teclado como vimos anteriormente. 
  Pulsamos las teclas que queremos usar en nuestra macro.
  
  ![](./gif/atajo_tecla.gif)
  
  
- Los atajos de tecla nos servira para agilizar nuestra automatizacion y funcione con menos demora.
+ Los atajos de tecla nos servira para agilizar nuestra automatización y funcione con menos demora.
  Si queres ver mas de estos atajos visita este sitio: https://www.computerhope.com/shortcut/word.htm
 
  
@@ -109,8 +109,7 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
  
 
  ## Escribe Texto
- Podemos llenar un campo con una cadena texto que escribiremos usando el boton **TEXT** de pulover. Escribiremos un texto
- o podemos usar una variable que declaramos antes, llamandola para que escriba el texto que contiene esa  dicha variable.
+Podemos llenar un campo con una cadena texto que escribiremos usando el botón **TEXT** de pulover. Escribiremos un texto O podemos usar una variable que declaramos antes, llamándola para que escriba el texto que contiene esa  dicha variable.
  **Escribiendo un texto**
  
  
@@ -119,15 +118,15 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
   
  **Llamar a una variable que contiene los datos de una celda de Excel solicitada previamente**
  
- **Recordatorio**: *No te olvides que todas las variables que usaremos en un Texto o incluso dentro de otra varible siempre 
- tienen que estar adentro del simbolo de porcentaje %Nombre de la variable%*
+ **Recordatorio**: *No te olvides que todas las variables que usaremos en un Texto o incluso dentro de otra variable siempre 
+ tienen que estar adentro del símbolo de porcentaje %Nombre de la variable%*
  
  
  ![](./gif/Write_Text_Variable.gif)
  
  
  ## Editar y guardar word con datos de excel.
- Con los paso que vimos anteriormente podemos reemplazar las palabras de un texto en Word con valores desde un excel.
+Con los pasos que vimos anteriormente podemos reemplazar las palabras de un texto en Word con valores desde un Excel.
  
  Pasos:
  1. Abrimos excel
@@ -135,20 +134,21 @@ Para que la ventana de nuestro aplicativo este siempre activa usamos **WinActiva
  3. Escribimos los valores que deseamos extraer en una variable. 
  Ej: `Nombre := XL.Range("B2").Value `
  4. Abrimos Word.
- 5. Una vez abierto el word, usamos el atajo de tecla *CTRL+L* y abre la ventana **Buscar y reemplazar**
- 6. Escribiremos un texto usando el boton **Text** que vimos anteriormente y escribiremos el boton que queremos reemplazar en word.
- 7. En el atajo de teclado escribiremos tab, asi podremos pasar al siguiente campo donde usariamos el texto que queremos usar.
- 8. Usaremos enter.
- 9. Cuando el word esta completo, lo guardamos sin reemplazar el archivo original. 
+ 5. Una vez abierto el Word, usamos el atajo de tecla *CTRL+L* y abre la ventana **Buscar y reemplazar**
+ 6. Escribiremos un texto usando el botón **Text** que vimos anteriormente y escribiremos el botón que queremos reemplazar en Word.
+ 7. En el atajo de teclado escribiremos tab, así podremos pasar al siguiente campo donde usaríamos el texto que queremos usar.
+ 8. Usaremos el atajo de enter.
+ 9. Cuando el Word está completo, lo guardamos sin reemplazar el archivo original. 
  10. Con F12 ingresamos a la ventana *Guardar Como...*
  11. Usamos TEXT para escribir la ruta para guardarlo y el nombre del archivo
 
 ## Enviar Email desde Outlook.
 
-Para poder enviar un email desde outlook teniendo una cuenta de Gmail, anteriormente tenemos que configurarlo para que podamos enviar y recibir emails.
+Para poder enviar un email desde Outlook teniendo una cuenta de Gmail, anteriormente tenemos que configurarlo para que podamos enviar y recibir email's.
 Tutorial: https://oit.colorado.edu/tutorial/gmail-configure-outlook-windows.
 
-Una vez que este configurado podemos iniciar el outlook. Lo iniciamos del mismo modo que los archivos 
+Una vez que este configurado podemos iniciar el outlook, usando RUN lo abrimos directamente con la ruta del exe ejemplo: (C:\Program Files\Microsoft Office\Office15\OUTLOOK.EXE)
+
  
  
  
