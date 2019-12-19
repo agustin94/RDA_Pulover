@@ -142,5 +142,5 @@ Groups=Iniciar:1
 15|Left Click, Break, FoundX, FoundY, 0|0, 0, 1920, 1080, C:\Users\Agustin Moreno\Desktop\Proyectos The Eye\RDA-Pulover\Screenshot\salir outlook.png|1|0|ImageSearch|UntilFound|Window|||
 16|[Pause]||1|2000|Sleep|||||
 17|WinClose||1|333|WinClose||A|||
-18|[LoopEnd]|LoopEnd|1|0|Loop|||||
+18|[LoopEnd]|LoopEnd|1|0|Loopa|||||
 
